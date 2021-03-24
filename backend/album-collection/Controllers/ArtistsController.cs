@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using album_collection;
 using album_collection.Models;
+using album_collection.Repositories;
 
 namespace album_collection.Controllers
 {
@@ -14,97 +15,90 @@ namespace album_collection.Controllers
     [ApiController]
     public class ArtistsController : ControllerBase
     {
-        private readonly MusicContext _context;
+        private  ArtistRepository _artistRepo;
 
-        public ArtistsController(MusicContext context)
+        public ArtistsController(ArtistRepository context)
         {
-            _context = context;
+            _artistRepo = context;
         }
 
         // GET: api/Artists
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Artist>>> GetArtists()
+        public IEnumerable<Artist> GetArtists()
         {
-            return await _context.Artists.ToListAsync();
+            return _artistRepo.GetAll();
         }
 
         // GET: api/Artists/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Artist>> GetArtist(int id)
+        public Artist GetArtist(int id)
         {
-            var artist = await _context.Artists.FindAsync(id);
-
-            if (artist == null)
-            {
-                return NotFound();
-            }
-
-            return artist;
+            return _artistRepo.GetById(id);
         }
 
-        // PUT: api/Artists/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for
-        // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutArtist(int id, Artist artist)
-        {
-            if (id != artist.Id)
-            {
-                return BadRequest();
-            }
+        //// PUT: api/Artists/5
+        //// To protect from overposting attacks, enable the specific properties you want to bind to, for
+        //// more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
+        //[HttpPut("{id}")]
+        //public async Task<IActionResult> PutArtist(int id, Artist artist)
+        //{
+        //    if (id != artist.Id)
+        //    {
+        //        return BadRequest();
+        //    }
 
-            _context.Entry(artist).State = EntityState.Modified;
+        //    _context.Entry(artist).State = EntityState.Modified;
 
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!ArtistExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
+        //    try
+        //    {
+        //        await _context.SaveChangesAsync();
+        //    }
+        //    catch (DbUpdateConcurrencyException)
+        //    {
+        //        if (!ArtistExists(id))
+        //        {
+        //            return NotFound();
+        //        }
+        //        else
+        //        {
+        //            throw;
+        //        }
+        //    }
 
-            return NoContent();
-        }
+        //    return NoContent();
+        //}
 
-        // POST: api/Artists
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for
-        // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
-        [HttpPost]
-        public async Task<ActionResult<Artist>> PostArtist(Artist artist)
-        {
-            _context.Artists.Add(artist);
-            await _context.SaveChangesAsync();
+        //// POST: api/Artists
+        //// To protect from overposting attacks, enable the specific properties you want to bind to, for
+        //// more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
+        //[HttpPost]
+        //public async Task<ActionResult<Artist>> PostArtist(Artist artist)
+        //{
+        //    _context.Artists.Add(artist);
+        //    await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetArtist", new { id = artist.Id }, artist);
-        }
+        //    return CreatedAtAction("GetArtist", new { id = artist.Id }, artist);
+        //}
 
-        // DELETE: api/Artists/5
-        [HttpDelete("{id}")]
-        public async Task<ActionResult<Artist>> DeleteArtist(int id)
-        {
-            var artist = await _context.Artists.FindAsync(id);
-            if (artist == null)
-            {
-                return NotFound();
-            }
+        //// DELETE: api/Artists/5
+        //[HttpDelete("{id}")]
+        //public async Task<ActionResult<Artist>> DeleteArtist(int id)
+        //{
+        //    var artist = await _context.Artists.FindAsync(id);
+        //    if (artist == null)
+        //    {
+        //        return NotFound();
+        //    }
 
-            _context.Artists.Remove(artist);
-            await _context.SaveChangesAsync();
+        //    _context.Artists.Remove(artist);
+        //    await _context.SaveChangesAsync();
 
-            return artist;
-        }
+        //    return artist;
+        //}
 
-        private bool ArtistExists(int id)
-        {
-            return _context.Artists.Any(e => e.Id == id);
-        }
+        //private bool ArtistExists(int id)
+        //{
+        //    return _context.Artists.Any(e => e.Id == id);
+        //}
     }
 }
