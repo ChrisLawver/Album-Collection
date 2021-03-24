@@ -12,7 +12,7 @@ namespace album_collection.Models
         public string Image{get; set;}
         public string RecordLabel{get; set;}
          
-        public virtual ICollection<Album> Alumbs{get; set;}
+        public virtual ICollection<Album> Albums{get; set;}
 
         public Artist()
         {

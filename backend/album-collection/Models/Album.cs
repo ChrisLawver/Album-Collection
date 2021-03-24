@@ -13,7 +13,7 @@ namespace album_collection.Models
 
         public string Image { get; set; }
 
-        public IEnumerable<Songs> Songs {get;set;}      // In Production so this will be red until built
+        //public IEnumerable<Songs> Songs {get;set;}      // In Production so this will be red until built
 
         public string RecordLabel { get; set; }
     }
