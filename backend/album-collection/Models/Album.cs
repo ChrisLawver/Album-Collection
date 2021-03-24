@@ -27,10 +27,11 @@ namespace album_collection.Models
         {
         }
 
-        public Album(int id, string name, Artist artist, string image, string recordLabel)
+        public Album(int id, string name, int artistId, Artist artist, string image, string recordLabel)
         {
             Id = id;
-            Name = Name;
+            Name = name;
+            ArtistId = artistId;
             Artist = artist;
             Image = image;
             RecordLabel = recordLabel;
