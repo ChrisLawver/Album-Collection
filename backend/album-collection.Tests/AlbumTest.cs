@@ -1,3 +1,4 @@
+
 using album_collection.Models;
 using System;
 using Xunit;
@@ -6,7 +7,6 @@ namespace album_collection.Tests
 {
     public class AlbumTest
     {
-
         Album sut;
         public AlbumTest() 
         {
