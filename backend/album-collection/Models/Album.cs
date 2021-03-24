@@ -11,7 +11,7 @@ namespace album_collection.Models
 
         public string AlbumName { get; set; }
 
-        public string BandName { get; set; }
+        public string Artist { get; set; }
 
         public string Image { get; set; }
 
@@ -24,11 +24,11 @@ namespace album_collection.Models
         {
         }
 
-        public Album(int id, string albumName, string bandName, string image, string recordLabel)
+        public Album(int id, string albumName, string artist, string image, string recordLabel)
         {
             Id = id;
             AlbumName = albumName;
-            BandName = bandName;
+            Artist = artist;
             Image = image;
             RecordLabel = recordLabel;
         }
