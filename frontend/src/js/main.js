@@ -1,1 +1,1 @@
-document.getElementById('app').innerText = "Hello World!"
+document.getElementById('app').innerText = "Hello World!";
