@@ -13,11 +13,11 @@ namespace album_collection.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class SongsController : ControllerBase
+    public class SongController : ControllerBase
     {
         private SongRepository _songRepo;
 
-        public SongsController(SongRepository context)
+        public SongController(SongRepository context)
         {
             _songRepo = context;
         }
