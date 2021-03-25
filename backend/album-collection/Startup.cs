@@ -2,8 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using album_collection.Models;
-using album_collection.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -28,10 +26,6 @@ namespace album_collection
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.AddDbContext<MusicContext>();
-            services.AddScoped<IRepository<Album>, AlbumRepository>();
-            services.AddScoped<IRepository<Artist>, ArtistRepository>();
-            services.AddScoped<IRepository<Song>, SongRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
