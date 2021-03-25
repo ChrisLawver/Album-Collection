@@ -15,11 +15,11 @@ namespace album_collection.Controllers
     [ApiController]
     public class AlbumController : ControllerBase
     {
-        private AlbumRepository _albumRepo;
+        IRepository<Album> _albumRepo;
 
-        public AlbumController(AlbumRepository context)
+        public AlbumController(IRepository<Album> context)
         {
-            _albumRepo = context;
+            this._albumRepo = context;
         }
 
         // GET: api/Albums

@@ -15,11 +15,11 @@ namespace album_collection.Controllers
     [ApiController]
     public class SongController : ControllerBase
     {
-        private SongRepository _songRepo;
+        IRepository<Song> _songRepo;
 
-        public SongController(SongRepository context)
+        public SongController(IRepository<Song> context)
         {
-            _songRepo = context;
+            this._songRepo = context;
         }
 
         // GET: api/Songs
