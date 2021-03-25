@@ -11,8 +11,8 @@ namespace album_collection.Models
         public string Name {get; set;}
         public string Image{get; set;}
         public string RecordLabel{get; set;}
-        
-         
+
+        [System.Text.Json.Serialization.JsonIgnore]
         public virtual ICollection<Album> Albums{get; set;}
 
         public Artist()

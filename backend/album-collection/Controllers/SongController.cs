@@ -13,41 +13,41 @@ namespace album_collection.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ArtistsController : ControllerBase
+    public class SongController : ControllerBase
     {
-        private  ArtistRepository _artistRepo;
+        IRepository<Song> _songRepo;
 
-        public ArtistsController(ArtistRepository context)
+        public SongController(IRepository<Song> context)
         {
-            _artistRepo = context;
+            this._songRepo = context;
         }
 
-        // GET: api/Artists
+        // GET: api/Songs
         [HttpGet]
-        public IEnumerable<Artist> GetArtists()
+        public IEnumerable<Song> GetSongs()
         {
-            return _artistRepo.GetAll();
+            return _songRepo.GetAll();
         }
 
-        // GET: api/Artists/5
+        // GET: api/Songs/5
         [HttpGet("{id}")]
-        public Artist GetArtist(int id)
+        public Song GetSong(int id)
         {
-            return _artistRepo.GetById(id);
+            return _songRepo.GetById(id);
         }
 
-        //// PUT: api/Artists/5
+        //// PUT: api/Songs/5
         //// To protect from overposting attacks, enable the specific properties you want to bind to, for
         //// more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         //[HttpPut("{id}")]
-        //public async Task<IActionResult> PutArtist(int id, Artist artist)
+        //public async Task<IActionResult> PutSong(int id, Song song)
         //{
-        //    if (id != artist.Id)
+        //    if (id != song.Id)
         //    {
         //        return BadRequest();
         //    }
 
-        //    _context.Entry(artist).State = EntityState.Modified;
+        //    _context.Entry(song).State = EntityState.Modified;
 
         //    try
         //    {
@@ -55,7 +55,7 @@ namespace album_collection.Controllers
         //    }
         //    catch (DbUpdateConcurrencyException)
         //    {
-        //        if (!ArtistExists(id))
+        //        if (!SongExists(id))
         //        {
         //            return NotFound();
         //        }
@@ -68,37 +68,37 @@ namespace album_collection.Controllers
         //    return NoContent();
         //}
 
-        //// POST: api/Artists
+        //// POST: api/Songs
         //// To protect from overposting attacks, enable the specific properties you want to bind to, for
         //// more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         //[HttpPost]
-        //public async Task<ActionResult<Artist>> PostArtist(Artist artist)
+        //public async Task<ActionResult<Song>> PostSong(Song song)
         //{
-        //    _context.Artists.Add(artist);
+        //    _context.Song.Add(song);
         //    await _context.SaveChangesAsync();
 
-        //    return CreatedAtAction("GetArtist", new { id = artist.Id }, artist);
+        //    return CreatedAtAction("GetSong", new { id = song.Id }, song);
         //}
 
-        //// DELETE: api/Artists/5
+        //// DELETE: api/Songs/5
         //[HttpDelete("{id}")]
-        //public async Task<ActionResult<Artist>> DeleteArtist(int id)
+        //public async Task<ActionResult<Song>> DeleteSong(int id)
         //{
-        //    var artist = await _context.Artists.FindAsync(id);
-        //    if (artist == null)
+        //    var song = await _context.Song.FindAsync(id);
+        //    if (song == null)
         //    {
         //        return NotFound();
         //    }
 
-        //    _context.Artists.Remove(artist);
+        //    _context.Song.Remove(song);
         //    await _context.SaveChangesAsync();
 
-        //    return artist;
+        //    return song;
         //}
 
-        //private bool ArtistExists(int id)
+        //private bool SongExists(int id)
         //{
-        //    return _context.Artists.Any(e => e.Id == id);
+        //    return _context.Song.Any(e => e.Id == id);
         //}
     }
 }

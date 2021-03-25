@@ -13,13 +13,13 @@ namespace album_collection.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class AlbumsController : ControllerBase
+    public class AlbumController : ControllerBase
     {
-        private AlbumRepository _albumRepo;
+        IRepository<Album> _albumRepo;
 
-        public AlbumsController(AlbumRepository context)
+        public AlbumController(IRepository<Album> context)
         {
-            _albumRepo = context;
+            this._albumRepo = context;
         }
 
         // GET: api/Albums
