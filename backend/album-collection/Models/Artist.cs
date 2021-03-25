@@ -11,6 +11,7 @@ namespace album_collection.Models
         public string Name {get; set;}
         public string Image{get; set;}
         public string RecordLabel{get; set;}
+        
          
         public virtual ICollection<Album> Albums{get; set;}
 

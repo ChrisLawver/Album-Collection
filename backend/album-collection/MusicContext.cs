@@ -26,5 +26,7 @@ namespace album_collection
         {
 
         }
+
+        public DbSet<album_collection.Models.Song> Song { get; set; }
     }
 }

@@ -10,7 +10,7 @@ namespace album_collection.Tests
         Album sut;
         public AlbumTest() 
         {
-            sut = new Album(1, "The Black Album", "Metallica", "image", "Record Label"); // ADD SONGS LATER
+            //sut = new Album(1, "The Black Album", "Metallica", "image", "Record Label"); // ADD SONGS LATER
         }
 
         [Fact]

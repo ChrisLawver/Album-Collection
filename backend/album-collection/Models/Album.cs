@@ -20,17 +20,18 @@ namespace album_collection.Models
 
         public string RecordLabel { get; set; }
 
-      //  public virtual IEnumerable<Songs> Songs { get; set; }      // In Production so this will be red until built
+        public virtual IEnumerable<Song> Songs { get; set; }
 
 
         public Album()
         {
         }
 
-        public Album(int id, string albumName, string artist, string image, string recordLabel)
+        public Album(int id, string name, int artistId, Artist artist, string image, string recordLabel)
         {
             Id = id;
-            AlbumName = albumName;
+            Name = name;
+            ArtistId = artistId;
             Artist = artist;
             Image = image;
             RecordLabel = recordLabel;
