@@ -1,6 +1,5 @@
 export default function Header(){
-return
-`
+return `
     <nav>
         <ul>
             <li class="nav_home">Home</li>

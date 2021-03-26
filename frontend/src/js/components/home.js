@@ -1,6 +1,5 @@
 export default function Home(){
-    return
-    `
+    return `
     <h1>Welcome to our App!</h1>
     `
 }
