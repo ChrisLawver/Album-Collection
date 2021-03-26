@@ -1,5 +1,6 @@
 import Header from "./components/header";
 import Footer from "./components/footer";
+import Artists from "./components/Artists";
 import Home from "./components/home";
 
 const appDiv = document.getElementById("app");
@@ -34,7 +35,7 @@ function navArtists(){
     const artistsButton = document.querySelector(".nav_artists");
     artistsButton.addEventListener('click', function(){
 
-        fetch("https://localhost:44393/api/artist")
+        fetch("https://localhost:44313/api/artist")
             .then(response => response.json())
             .then(data => appDiv.innerHTML = Artists(data))
             .catch(err => console.log(err));
