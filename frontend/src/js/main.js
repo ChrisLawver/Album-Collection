@@ -9,7 +9,7 @@ export default() => {
     setupHeader();
     setupFooter();
     navHome();
-    
+    navArtists();
     appDiv.innerHTML = Home();
 }
 
@@ -27,5 +27,17 @@ function navHome(){
     const homeLink = document.querySelector(".nav_home");
     homeLink.addEventListener('click', function(){
         appDiv.innerHTML = Home();
+    });
+}
+
+function navArtists(){
+    const artistsButton = document.querySelector(".nav_artists");
+    artistsButton.addEventListener('click', function(){
+
+        fetch("https://localhost:44393/api/artist")
+            .then(response => response.json())
+            .then(data => appDiv.innerHTML = Artists(data))
+            .catch(err => console.log(err));
+
     });
 }
