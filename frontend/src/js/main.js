@@ -2,6 +2,7 @@ import Header from "./components/header";
 import Footer from "./components/footer";
 import Artists from "./components/Artists";
 import Home from "./components/home";
+import Albums from "./components/Albums";
 
 const appDiv = document.getElementById("app");
 
@@ -11,6 +12,7 @@ export default() => {
     setupFooter();
     navHome();
     navArtists();
+    navAlbums();
     appDiv.innerHTML = Home();
 }
 
@@ -38,6 +40,18 @@ function navArtists(){
         fetch("https://localhost:44313/api/artist")
             .then(response => response.json())
             .then(data => appDiv.innerHTML = Artists(data))
+            .catch(err => console.log(err));
+
+    });
+}
+
+function navAlbums(){
+    const albumsButton = document.querySelector(".nav_albums");
+    albumsButton.addEventListener('click', function(){
+
+        fetch("https://localhost:44313/api/album")
+            .then(response => response.json())
+            .then(data => appDiv.innerHTML = Albums(data))
             .catch(err => console.log(err));
 
     });
