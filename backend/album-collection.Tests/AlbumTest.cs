@@ -34,12 +34,12 @@ namespace album_collection.Tests
         //    Assert.Equal("Metallica", result);
         //}
 
-        [Fact]
-        public void Album_Constructor_Sets_Record_Label_On_Album_Model()
-        {
-            string result = sut.RecordLabel;
-            Assert.Equal("Record Label", result);
-        }
+        //[Fact]
+        //public void Album_Constructor_Sets_Record_Label_On_Album_Model()
+        //{
+        //    string result = sut.RecordLabel;
+        //    Assert.Equal("Record Label", result);
+        //}
 
         //[Fact]
         //public void Album_Constructor_Sets_Songs_On_Album_Model()

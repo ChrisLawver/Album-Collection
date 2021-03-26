@@ -18,7 +18,7 @@ namespace album_collection.Models
 
         public string Image { get; set; }
 
-        public string RecordLabel { get; set; }
+        // public string RecordLabel { get; set; }
 
         public virtual IEnumerable<Song> Songs { get; set; }
 
@@ -27,14 +27,14 @@ namespace album_collection.Models
         {
         }
 
-        public Album(int id, string name, int artistId, Artist artist, string image, string recordLabel)
+        public Album(int id, string name, int artistId, Artist artist, string image) // , string recordLabel)
         {
             Id = id;
             Name = name;
             ArtistId = artistId;
             Artist = artist;
             Image = image;
-            RecordLabel = recordLabel;
+            // RecordLabel = recordLabel;
         }
     }
 

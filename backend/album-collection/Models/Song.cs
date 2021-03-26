@@ -9,8 +9,8 @@ namespace album_collection.Models
     {
        public int Id { get; set; }
        public string Title { get; set; }
-       public int Duration { get; set; }
-       public string Link { get; set; }
+       public int Duration { get; set; }                // Seconds, To Be converted Later
+        public string Link { get; set; }
        public int AlbumId { get; set; }
        [System.Text.Json.Serialization.JsonIgnore]
 
