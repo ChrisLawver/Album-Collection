@@ -1,6 +1,9 @@
 import Header from "./components/header";
 import Footer from "./components/footer";
+import Artists from "./components/Artists";
 import Home from "./components/home";
+import Albums from "./components/Albums";
+import Songs from "./components/Songs";
 
 const appDiv = document.getElementById("app");
 
@@ -9,7 +12,9 @@ export default() => {
     setupHeader();
     setupFooter();
     navHome();
-    
+    navArtists();
+    navAlbums();
+    navSongs();
     appDiv.innerHTML = Home();
 }
 
@@ -27,5 +32,41 @@ function navHome(){
     const homeLink = document.querySelector(".nav_home");
     homeLink.addEventListener('click', function(){
         appDiv.innerHTML = Home();
+    });
+}
+
+function navArtists(){
+    const artistsButton = document.querySelector(".nav_artists");
+    artistsButton.addEventListener('click', function(){
+
+        fetch("https://localhost:44313/api/artist")
+            .then(response => response.json())
+            .then(data => appDiv.innerHTML = Artists(data))
+            .catch(err => console.log(err));
+
+    });
+}
+
+function navAlbums(){
+    const albumsButton = document.querySelector(".nav_albums");
+    albumsButton.addEventListener('click', function(){
+
+        fetch("https://localhost:44313/api/album")
+            .then(response => response.json())
+            .then(data => appDiv.innerHTML = Albums(data))
+            .catch(err => console.log(err));
+
+    });
+}
+
+function navSongs(){
+    const songsButton = document.querySelector(".nav_songs");
+    songsButton.addEventListener('click', function(){
+
+        fetch("https://localhost:44313/api/song")
+            .then(response => response.json())
+            .then(data => appDiv.innerHTML = Songs(data))
+            .catch(err => console.log(err));
+
     });
 }
