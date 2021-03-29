@@ -3,6 +3,7 @@ import Footer from "./components/footer";
 import Artists from "./components/Artists";
 import Home from "./components/home";
 import Albums from "./components/Albums";
+import Songs from "./components/Songs";
 
 const appDiv = document.getElementById("app");
 
@@ -13,6 +14,7 @@ export default() => {
     navHome();
     navArtists();
     navAlbums();
+    navSongs();
     appDiv.innerHTML = Home();
 }
 
@@ -52,6 +54,18 @@ function navAlbums(){
         fetch("https://localhost:44313/api/album")
             .then(response => response.json())
             .then(data => appDiv.innerHTML = Albums(data))
+            .catch(err => console.log(err));
+
+    });
+}
+
+function navSongs(){
+    const songsButton = document.querySelector(".nav_songs");
+    songsButton.addEventListener('click', function(){
+
+        fetch("https://localhost:44313/api/song")
+            .then(response => response.json())
+            .then(data => appDiv.innerHTML = Songs(data))
             .catch(err => console.log(err));
 
     });
