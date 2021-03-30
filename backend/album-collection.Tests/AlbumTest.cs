@@ -10,7 +10,7 @@ namespace album_collection.Tests
         Album sut;
         public AlbumTest() 
         {
-            //sut = new Album(1, "The Black Album", "Metallica", "image", "Record Label"); // ADD SONGS LATER
+            sut = new Album(1, "The Black Album", 1, "image"); // ADD SONGS LATER
         }
 
         [Fact]
@@ -26,26 +26,5 @@ namespace album_collection.Tests
             string result = sut.Name;
             Assert.Equal("The Black Album", result);
         }
-
-        //[Fact]
-        //public void Album_Constructor_Sets_Artist_On_Album_Model()
-        //{
-        //    Artist result = sut.Artist;
-        //    Assert.Equal("Metallica", result);
-        //}
-
-        //[Fact]
-        //public void Album_Constructor_Sets_Record_Label_On_Album_Model()
-        //{
-        //    string result = sut.RecordLabel;
-        //    Assert.Equal("Record Label", result);
-        //}
-
-        //[Fact]
-        //public void Album_Constructor_Sets_Songs_On_Album_Model()
-        //{
-        //    string result = sut.Songs;
-        //    Assert.Equal(, result);
-        //}
     }
 }
