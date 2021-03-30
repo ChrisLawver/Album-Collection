@@ -5,6 +5,8 @@ import Home from "./components/home";
 import Albums from "./components/Albums";
 import Songs from "./components/Songs";
 import Song from "./components/Song";
+import Album from "./components/Album";
+import Artist from "./components/Artist";
 
 const appDiv = document.getElementById("app");
 
@@ -42,10 +44,26 @@ function navArtists(){
 
         fetch("https://localhost:44313/api/artist")
             .then(response => response.json())
-            .then(data => appDiv.innerHTML = Artists(data))
+            .then(data =>{
+                appDiv.innerHTML = Artists(data);
+                artistButton();
+            })
             .catch(err => console.log(err));
 
     });
+}
+
+function artistButton(){
+    const artistNameElements = document.querySelectorAll(".artist_name");
+    artistNameElements.forEach(element => {
+        element.addEventListener('click', function(){
+            const artistId = element.id;
+            fetch(`https://localhost:44313/api/artist/${artistId}`)
+            .then(response => response.json())
+            .then(data => appDiv.innerHTML = Artist(data))
+            .catch(err => console.log(err));
+        })
+    })
 }
 
 function navAlbums(){
@@ -54,10 +72,26 @@ function navAlbums(){
 
         fetch("https://localhost:44313/api/album")
             .then(response => response.json())
-            .then(data => appDiv.innerHTML = Albums(data))
+            .then(data => {
+                appDiv.innerHTML = Albums(data);
+                albumButton();
+            })
             .catch(err => console.log(err));
 
     });
+}
+
+function albumButton(){
+    const albumNameElements = document.querySelectorAll(".album_name");
+    albumNameElements.forEach(element => {
+        element.addEventListener('click', function(){
+            const albumId = element.id;
+            fetch(`https://localhost:44313/api/album/${albumId}`)
+            .then(response => response.json())
+            .then(data => appDiv.innerHTML = Album(data))
+            .catch(err => console.log(err));
+        })
+    })
 }
 
 function navSongs(){
@@ -76,7 +110,7 @@ function navSongs(){
 }
 
 function songButton(){
-    const songNameElements = document.querySelectorAll(".song_name");
+    const songNameElements = document.querySelectorAll(".song_title");
     songNameElements.forEach(element => {
         element.addEventListener('click', function(){
             const songId = element.id;
