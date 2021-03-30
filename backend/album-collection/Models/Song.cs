@@ -12,7 +12,6 @@ namespace album_collection.Models
        public int Duration { get; set; }                // Seconds, To Be converted Later
         public string Link { get; set; }
        public int AlbumId { get; set; }
-       [System.Text.Json.Serialization.JsonIgnore]
 
        public virtual Album Album { get; set; }
 

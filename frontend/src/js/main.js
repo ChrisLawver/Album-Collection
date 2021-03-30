@@ -4,6 +4,7 @@ import Artists from "./components/Artists";
 import Home from "./components/home";
 import Albums from "./components/Albums";
 import Songs from "./components/Songs";
+import Song from "./components/Song";
 
 const appDiv = document.getElementById("app");
 
@@ -65,8 +66,24 @@ function navSongs(){
 
         fetch("https://localhost:44313/api/song")
             .then(response => response.json())
-            .then(data => appDiv.innerHTML = Songs(data))
+            .then(data => {
+                appDiv.innerHTML = Songs(data);
+                songButton()
+            })
             .catch(err => console.log(err));
 
     });
+}
+
+function songButton(){
+    const songNameElements = document.querySelectorAll(".song_name");
+    songNameElements.forEach(element => {
+        element.addEventListener('click', function(){
+            const songId = element.id;
+            fetch(`https://localhost:44313/api/song/${songId}`)
+            .then(response => response.json())
+            .then(data => appDiv.innerHTML = Song(data))
+            .catch(err => console.log(err));
+        })
+    })
 }
