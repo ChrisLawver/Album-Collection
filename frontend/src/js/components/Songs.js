@@ -6,7 +6,7 @@ export default function Songs(songs){
         ${songs.map(song =>{
             return `
             <li>
-            ${song.title}
+            <h4 class="song_title" id="${song.id}">${song.title}</h4>
             </li>
             `
         }).join('')}
