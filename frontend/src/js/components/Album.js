@@ -1,4 +1,9 @@
 export default function Album(album){
+
+    if(album.songs == null){
+        album.songs = [];
+    }
+    
     return `
         <h1>${album.name}</h1>
         <h2>${album.artist.name}</h2>

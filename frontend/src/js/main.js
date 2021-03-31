@@ -76,6 +76,8 @@ function navAlbums(){
             .then(data => {
                 appDiv.innerHTML = Albums(data);
                 albumButton();
+                fillArtists();
+                addAlbum();
             })
             .catch(err => console.log(err));
 
@@ -148,10 +150,59 @@ function addArtist(){
              appDiv.innerHTML = Artist(artist);
          })
          .catch(err => console.log(err));
-
-
     })
-
-
 }
 
+function addAlbum(){
+    const addAlbumButton = document.querySelector(".albumAddButton");
+    addAlbumButton.addEventListener('click', function(){
+        const albumName = document.getElementById("newAlbumName").value;
+        const albumImage = document.getElementById("newAlbumImage").value;
+        const albumArtistId = document.getElementById("artists").value;
+        const requestBody = {
+            Name: albumName,
+            Image: albumImage,
+            ArtistId: albumArtistId
+        }
+
+        fetch(`https://localhost:44313/api/album`, {
+             method: "POST",
+             headers: {
+                 "Content-Type" : "application/json"
+             },
+             body: JSON.stringify(requestBody)
+         })
+         .then(response => response.json())
+         .then(album => {
+             console.log(album);
+             appDiv.innerHTML = Album(album);
+         })
+         .catch(err => console.log(err));
+    })
+}
+
+function fillArtists(){
+    let dropdown = document.getElementById('artists');
+    dropdown.length = 0;
+
+    let defaultOption = document.createElement('option');
+    defaultOption.text = 'Select an Artist';
+    defaultOption.disabled = 'disabled';
+
+    dropdown.add(defaultOption);
+    dropdown.selectedIndex = 0;
+
+    fetch("https://localhost:44313/api/artist")
+    .then(response => response.json())
+    .then(data => {
+        let option;
+        data.forEach(function(artist){
+            option = document.createElement('option');
+            option.text = artist.name;
+            option.value = artist.id;
+            dropdown.add(option);
+        })
+    })
+    .catch(err => console.log(err));
+
+}

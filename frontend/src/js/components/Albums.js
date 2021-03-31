@@ -12,5 +12,19 @@ export default function Albums(albums){
         }).join('')}
 
         </ol>
+
+        <section class = "addAlbum">
+            <label>Album Name: </label>
+            <input type = "text" id = "newAlbumName" placeholder = "Album Name"/>
+            <br>
+            <label>Album Art: </label>
+            <input type = "text" id = "newAlbumImage" placeholder = "Image URL"/>
+            <br>
+            <select id = "artists">
+            </select>
+            <br>
+            <button class = "albumAddButton">Add Album</button>
+        </section>
+
         `
        }
