@@ -56,7 +56,15 @@ namespace album_collection
                 Name = "The Rolling Stones",
                 Image = "https://www.biography.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTcxODU1ODE1MTczNDgyMzc4/_the-rolling-stones-london-1963-left-to-right-mick-jagger-charlie-watts-brian-jones-keith-richards-and-bill-wyman-photo-by-terry-oneill_iconic-images_getty-images.jpg",
                 RecordLabel = "Decca"
-                }
+                },
+
+                 new Artist()
+                 {
+                     Id = 5,
+                     Name = "Pink Floyd",
+                     Image = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTm3L4skHs-NTx9jDtfZABhv_bn-z9hwruStw&usqp=CAU",
+                     RecordLabel = "Parlophone"
+                 }
                 );
 
 
@@ -88,6 +96,13 @@ namespace album_collection
                     Name = "Let It Bleed",
                     ArtistId = 4,
                     Image = "https://upload.wikimedia.org/wikipedia/en/thumb/c/c0/LetitbleedRS.jpg/220px-LetitbleedRS.jpg"
+                },
+                new Album()
+                {
+                    Id = 5,
+                    Name = "Dark Side of the Moon",
+                    ArtistId = 5,
+                    Image = "https://townsquare.media/site/295/files/2018/03/DarkSide.jpg?w=980&q=75"
                 }
                 );
 
@@ -195,7 +210,7 @@ namespace album_collection
                     Id = 13,
                     Title = "Hit My Line",
                     Duration = 265,
-                    Link = "https://www.youtube.com/watch?v=LsfnODTWgss",
+                    Link = "https://www.youtube.com/watch?v=3CyWixndEYE",
                     AlbumId = 2,
                 },
                 new Song()
@@ -203,7 +218,7 @@ namespace album_collection
                     Id = 14,
                     Title = "GP4",
                     Duration = 274,
-                    Link = "https://www.youtube.com/watch?v=LsfnODTWgss",
+                    Link = "https://www.youtube.com/watch?v=3rwiWYZhIyA",
                     AlbumId = 2,
                 },
                 new Song()
@@ -211,7 +226,7 @@ namespace album_collection
                     Id = 15,
                     Title = "Celebration",
                     Duration = 230,
-                    Link = "https://www.youtube.com/watch?v=LsfnODTWgss",
+                    Link = "https://www.youtube.com/watch?v=qV93nZRzY4U&list=RDqV93nZRzY4U&start_radio=1",
                     AlbumId = 2,
                 },
                 new Song()
@@ -219,7 +234,7 @@ namespace album_collection
                     Id = 16,
                     Title = "Open Mic\\Aquarius III",
                     Duration = 303,
-                    Link = "https://www.youtube.com/watch?v=LsfnODTWgss",
+                    Link = "https://www.youtube.com/watch?v=CvWTlFPWjb4",
                     AlbumId = 2,
                 },
                 new Song()
@@ -227,7 +242,7 @@ namespace album_collection
                     Id = 17,
                     Title = "Soul Food II",
                     Duration = 333,
-                    Link = "https://www.youtube.com/watch?v=LsfnODTWgss",
+                    Link = "https://www.youtube.com/watch?v=RGscCU-oEiE",
                     AlbumId = 2,
                 },
                 new Song()
@@ -235,7 +250,7 @@ namespace album_collection
                     Id = 18,
                     Title = "Perfect",
                     Duration = 100,
-                    Link = "https://www.youtube.com/watch?v=LsfnODTWgss",
+                    Link = "https://www.youtube.com/watch?v=ehBZXAP-yU8",
                     AlbumId = 2,
                 },
                 new Song()
@@ -243,7 +258,7 @@ namespace album_collection
                     Id = 19,
                     Title = "Man I Is",
                     Duration = 269,
-                    Link = "https://www.youtube.com/watch?v=LsfnODTWgss",
+                    Link = "https://www.youtube.com/watch?v=dANdTnL7GxE",
                     AlbumId = 2,
                 },
                 new Song()
@@ -251,7 +266,7 @@ namespace album_collection
                     Id = 20,
                     Title = "DadBod",
                     Duration = 294,
-                    Link = "https://www.youtube.com/watch?v=LsfnODTWgss",
+                    Link = "https://www.youtube.com/watch?v=NHduvDpCIRQ",
                     AlbumId = 2,
                 },
                 new Song()
@@ -259,7 +274,7 @@ namespace album_collection
                     Id = 21,
                     Title = "5 Hooks",
                     Duration = 232,
-                    Link = "https://www.youtube.com/watch?v=LsfnODTWgss",
+                    Link = "https://www.youtube.com/watch?v=F-NjAHc-Izg",
                     AlbumId = 2,
                 },
                 new Song()
@@ -267,7 +282,7 @@ namespace album_collection
                     Id = 22,
                     Title = "Dark Place",
                     Duration = 195,
-                    Link = "https://www.youtube.com/watch?v=LsfnODTWgss",
+                    Link = "https://www.youtube.com/watch?v=Xh8-OOsGOgw",
                     AlbumId = 2,
                 },
                 new Song()
@@ -275,7 +290,7 @@ namespace album_collection
                     Id = 23,
                     Title = "A2Z",
                     Duration = 188,
-                    Link = "https://www.youtube.com/watch?v=LsfnODTWgss",
+                    Link = "https://www.youtube.com/watch?v=jVfAY365sWc",
                     AlbumId = 2,
                 },
                 new Song()
@@ -283,7 +298,7 @@ namespace album_collection
                     Id = 24,
                     Title = "Heard Em Say",
                     Duration = 216,
-                    Link = "https://www.youtube.com/watch?v=LsfnODTWgss",
+                    Link = "https://www.youtube.com/watch?v=QQ6X3ZR19cw",
                     AlbumId = 2,
                 },
                 new Song()
@@ -291,7 +306,7 @@ namespace album_collection
                     Id = 25,
                     Title = "Amen",
                     Duration = 146,
-                    Link = "https://www.youtube.com/watch?v=LsfnODTWgss",
+                    Link = "https://www.youtube.com/watch?v=Mvo_6ejUyfc",
                     AlbumId = 2,
                 },
                 new Song()
@@ -299,7 +314,7 @@ namespace album_collection
                     Id = 26,
                     Title = "Obediently Yours",
                     Duration = 369,
-                    Link = "https://www.youtube.com/watch?v=LsfnODTWgss",
+                    Link = "https://www.youtube.com/watch?v=ynVwUETh9Ts",
                     AlbumId = 2,
                 },
                 //DRESSED TO KILL - KISS
@@ -455,8 +470,84 @@ namespace album_collection
                     Duration = 448,
                     Link = "https://www.youtube.com/watch?v=3dfYcQ_r_x8",
                     AlbumId = 4
-                }
+                },
+                 // Pink Floyd Dark Side of the Moon
+                 new Song()
+                 {
+                     Id = 46,
+                     Title = "Speak to Me / Breathe",
+                     Duration = 238,
+                     Link = "https://www.youtube.com/watch?v=R49d4f5sEs4",
+                     AlbumId = 5
+                 },
+                  new Song()
+                  {
+                      Id = 47,
+                      Title = "On the Run",
+                      Duration = 215,
+                      Link = "https://www.youtube.com/watch?v=VouHPeO4Gls",
+                      AlbumId = 5
+                  },
+                  new Song()
+                  {
+                      Id = 48,
+                      Title = "Time",
+                      Duration = 425,
+                      Link = "https://www.youtube.com/watch?v=JwYX52BP2Sk",
+                      AlbumId = 5
+                  },
+                   new Song()
+                   {
+                       Id = 49,
+                       Title = "The Great Gig in the Sky",
+                       Duration = 284,
+                       Link = "https://www.youtube.com/watch?v=cVBCE3gaNxc",
+                       AlbumId = 5
+                   },
+                   new Song()
+                   {
+                       Id = 50,
+                       Title = "Money",
+                       Duration = 383,
+                       Link = "https://www.youtube.com/watch?v=cpbbuaIA3Ds",
+                       AlbumId = 5
+                   },
+                   new Song()
+                   {
+                       Id = 51,
+                       Title = "Us and Them",
+                       Duration = 470,
+                       Link = "https://www.youtube.com/watch?v=nDbeqj-1XOo",
+                       AlbumId = 5
+                   },
+                   new Song()
+                   {
+                       Id = 52,
+                       Title = "Any Colour You Like",
+                       Duration = 206,
+                       Link = "https://www.youtube.com/watch?v=bK7HJvmgFnM",
+                       AlbumId = 5
+                   },
+                   new Song()
+                   {
+                       Id = 53,
+                       Title = "Brain Damage",
+                       Duration = 227,
+                       Link = "https://www.youtube.com/watch?v=BhYKN21olBw",
+                       AlbumId = 5
+                   },
+                   new Song()
+                   {
+                       Id = 54,
+                       Title = "Eclipse",
+                       Duration = 121,
+                       Link = "https://www.youtube.com/watch?v=9wjZrswriz0",
+                       AlbumId = 5
+                   }
                 );
+
+
+
 
 
         }
