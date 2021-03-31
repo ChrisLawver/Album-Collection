@@ -47,11 +47,12 @@ function navArtists(){
             .then(data =>{
                 appDiv.innerHTML = Artists(data);
                 artistButton();
+                addArtist();
             })
             .catch(err => console.log(err));
-
     });
 }
+
 
 function artistButton(){
     const artistNameElements = document.querySelectorAll(".artist_name");
@@ -121,3 +122,36 @@ function songButton(){
         })
     })
 }
+
+function addArtist(){
+    const addArtistButton = document.querySelector(".artistAddButton");
+    addArtistButton.addEventListener('click', function(){
+        const artistName = document.getElementById("newArtistName").value;
+        const artistRecordLabel = document.getElementById("newRecordLabel").value;
+        const artistImage = document.getElementById("newArtistImage").value;
+        const requestBody = {
+            Name: artistName,
+            RecordLabel: artistRecordLabel,
+            Image: artistImage
+        }
+
+        fetch(`https://localhost:44313/api/artist`, {
+             method: "POST",
+             headers: {
+                 "Content-Type" : "application/json"
+             },
+             body: JSON.stringify(requestBody)
+         })
+         .then(response => response.json())
+         .then(artist => {
+             console.log(artist);
+             appDiv.innerHTML = Artist(artist);
+         })
+         .catch(err => console.log(err));
+
+
+    })
+
+
+}
+

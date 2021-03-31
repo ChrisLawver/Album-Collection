@@ -12,5 +12,24 @@ export default function Artists(artists){
          }).join('')}
 
          </ol>
+
+         <section class = "addArtist">
+            <label>Artist Name: </label>
+            <input type = "text" id = "newArtistName" placeholder = "Artist Name"/>
+            <br>
+            <label>Record Label: </label>
+            <input type = "text" id = "newRecordLabel" placeholder = "Record Label"/>
+            <br>
+            <label>Artist's Picture: </label>
+            <input type = "text" id = "newArtistImage" placeholder = "Image URL"/>
+            <br>
+            <button class = "artistAddButton">Add Artist</button>
+         </section>
+
+
+
          `
+
         }
+
+
