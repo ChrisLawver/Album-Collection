@@ -61,7 +61,10 @@ function artistButton(){
             const artistId = element.id;
             fetch(`https://localhost:44313/api/artist/${artistId}`)
             .then(response => response.json())
-            .then(data => appDiv.innerHTML = Artist(data))
+            .then(data => {
+                appDiv.innerHTML = Artist(data);
+                addAlbumByArtistId();
+            })
             .catch(err => console.log(err));
         })
     })
@@ -91,7 +94,10 @@ function albumButton(){
             const albumId = element.id;
             fetch(`https://localhost:44313/api/album/${albumId}`)
             .then(response => response.json())
-            .then(data => appDiv.innerHTML = Album(data))
+            .then(data => {
+                 appDiv.innerHTML = Album(data);
+                addSongByAlbumId();
+                })
             .catch(err => console.log(err));
         })
     })
@@ -261,4 +267,62 @@ function fillAlbums(){
         })
     })
     .catch(err => console.log(err));
+}
+
+function addSongByAlbumId(){
+    const addSongButton = document.querySelector(".songAddButton");
+    addSongButton.addEventListener('click', function(){
+        const songTitle = document.getElementById("newSongTitle").value;
+        const songLength = parseInt(document.getElementById("newSongLength").value);
+        const songLink = document.getElementById("newSongLink").value;
+        const songAlbumId = addSongButton.id;
+        const requestBody = {
+            Title: songTitle,
+            Duration: songLength,
+            Link: songLink,
+            AlbumId: songAlbumId
+        }
+
+        fetch(`https://localhost:44313/api/song`, {
+             method: "POST",
+             headers: {
+                 "Content-Type" : "application/json"
+             },
+             body: JSON.stringify(requestBody)
+         })
+         .then(response => response.json())
+         .then(song => {
+             console.log(song);
+             appDiv.innerHTML = Song(song);
+         })
+         .catch(err => console.log(err));
+    })
+}
+
+function addAlbumByArtistId(){
+    const addAlbumButton = document.querySelector(".albumAddButton");
+    addAlbumButton.addEventListener('click', function(){
+        const albumName = document.getElementById("newAlbumName").value;
+        const albumImage = document.getElementById("newAlbumImage").value;
+        const albumArtistId = addAlbumButton.id;
+        const requestBody = {
+            Name: albumName,
+            Image: albumImage,
+            ArtistId: albumArtistId
+        }
+
+        fetch(`https://localhost:44313/api/album`, {
+             method: "POST",
+             headers: {
+                 "Content-Type" : "application/json"
+             },
+             body: JSON.stringify(requestBody)
+         })
+         .then(response => response.json())
+         .then(album => {
+             console.log(album);
+             appDiv.innerHTML = Album(album);
+         })
+         .catch(err => console.log(err));
+    })
 }
