@@ -64,6 +64,14 @@ namespace album_collection
                      Name = "Pink Floyd",
                      Image = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTm3L4skHs-NTx9jDtfZABhv_bn-z9hwruStw&usqp=CAU",
                      RecordLabel = "Parlophone"
+                 },
+
+                 new Artist()
+                 {
+                     Id = 6,
+                     Name = "Big Bad Bosses",
+                     Image = "https://pbs.twimg.com/media/EErzIfUVUAAO51L.jpg",
+                     RecordLabel = "TOVG Records"
                  }
                 );
 
@@ -103,6 +111,13 @@ namespace album_collection
                     Name = "Dark Side of the Moon",
                     ArtistId = 5,
                     Image = "https://townsquare.media/site/295/files/2018/03/DarkSide.jpg?w=980&q=75"
+                },
+                new Album()
+                {
+                    Id = 6,
+                    Name = "Power Overwhelming",
+                    ArtistId = 6,
+                    Image = "https://static.wikia.nocookie.net/superbeardbrothers/images/e/ee/B3_Power_Overwhelming.jpg/revision/latest/scale-to-width-down/340?cb=20160205002654"
                 }
                 );
 
@@ -543,6 +558,119 @@ namespace album_collection
                        Duration = 121,
                        Link = "https://www.youtube.com/watch?v=9wjZrswriz0",
                        AlbumId = 5
+                   },
+                   //B3, Power Overwhelming
+                   new Song()
+                   {
+                       Id = 55,
+                       Title = "Intro",
+                       Duration = 62,
+                       Link = "https://www.youtube.com/watch?v=HkcUD2ip_XE&list=PLx6GleNkyUhgS5XXXd_jekiWHVp4Bnq1D&index=1&ab_channel=BigBadBosses-Topic",
+                       AlbumId = 6
+                   },
+                   new Song()
+                   {
+                       Id = 56,
+                       Title = "I'm the Boss",
+                       Duration = 263,
+                       Link = "https://www.youtube.com/watch?v=xJoT-_gUDlM&list=PLx6GleNkyUhgS5XXXd_jekiWHVp4Bnq1D&index=2&ab_channel=BigBadBosses-Topic",
+                       AlbumId = 6
+                   },
+                   new Song()
+                   {
+                       Id = 57,
+                       Title = "Princess",
+                       Duration = 238,
+                       Link = "https://www.youtube.com/watch?v=3f1K2YQSqFk&list=PLx6GleNkyUhgS5XXXd_jekiWHVp4Bnq1D&index=3&ab_channel=BigBadBosses-Topic",
+                       AlbumId = 6
+                   },
+                   new Song()
+                   {
+                       Id = 58,
+                       Title = "Egg Man",
+                       Duration = 206,
+                       Link = "https://www.youtube.com/watch?v=oTBhg7Q8Sx0&list=PLx6GleNkyUhgS5XXXd_jekiWHVp4Bnq1D&index=4&ab_channel=BigBadBosses-Topic",
+                       AlbumId = 6
+                   },
+                   new Song()
+                   {
+                       Id = 59,
+                       Title = "Angel",
+                       Duration = 221,
+                       Link = "https://www.youtube.com/watch?v=dvVGfu4j8TA&list=PLx6GleNkyUhgS5XXXd_jekiWHVp4Bnq1D&index=5&ab_channel=BigBadBosses-Topic",
+                       AlbumId = 6
+                   },
+                   new Song()
+                   {
+                       Id = 60,
+                       Title = "Racing",
+                       Duration = 97,
+                       Link = "https://www.youtube.com/watch?v=t2D1hyBpvQ0&list=PLx6GleNkyUhgS5XXXd_jekiWHVp4Bnq1D&index=6&ab_channel=BigBadBosses-Topic",
+                       AlbumId = 6
+                   },
+                   new Song()
+                   {
+                       Id = 61,
+                       Title = "Anger Management",
+                       Duration = 219,
+                       Link = "https://www.youtube.com/watch?v=sG9FCVBoFI0&list=PLx6GleNkyUhgS5XXXd_jekiWHVp4Bnq1D&index=7&ab_channel=BigBadBosses-Topic",
+                       AlbumId = 6
+                   },
+                   new Song()
+                   {
+                       Id = 62,
+                       Title = "Capture You",
+                       Duration = 232,
+                       Link = "https://www.youtube.com/watch?v=KbJ5qzkZ27A&list=PLx6GleNkyUhgS5XXXd_jekiWHVp4Bnq1D&index=8&ab_channel=BigBadBosses-Topic",
+                       AlbumId = 6
+                   },
+                   new Song()
+                   {
+                       Id = 63,
+                       Title = "The Raid",
+                       Duration = 205,
+                       Link = "https://www.youtube.com/watch?v=D_DsYLwKU5A&list=PLx6GleNkyUhgS5XXXd_jekiWHVp4Bnq1D&index=9&ab_channel=BigBadBosses-Topic",
+                       AlbumId = 6
+                   },
+                   new Song()
+                   {
+                       Id = 64,
+                       Title = "Questions",
+                       Duration = 50,
+                       Link = "https://www.youtube.com/watch?v=lx1plQe4AWk&list=PLx6GleNkyUhgS5XXXd_jekiWHVp4Bnq1D&index=10&ab_channel=BigBadBosses-Topic",
+                       AlbumId = 6
+                   },
+                   new Song()
+                   {
+                       Id = 65,
+                       Title = "Bears and Birds",
+                       Duration = 186,
+                       Link = "",
+                       AlbumId = 6
+                   },
+                   new Song()
+                   {
+                       Id = 66,
+                       Title = "Minions",
+                       Duration = 211,
+                       Link = "https://www.youtube.com/watch?v=E1LUhqYOhHo&list=PLx6GleNkyUhgS5XXXd_jekiWHVp4Bnq1D&index=12&ab_channel=BigBadBosses-Topic",
+                       AlbumId = 6
+                   },
+                   new Song()
+                   {
+                       Id = 67,
+                       Title = "Office",
+                       Duration = 65,
+                       Link = "https://www.youtube.com/watch?v=XCEWJ5n7Jas&list=PLx6GleNkyUhgS5XXXd_jekiWHVp4Bnq1D&index=13&ab_channel=BigBadBosses-Topic",
+                       AlbumId = 6
+                   },
+                   new Song()
+                   {
+                       Id = 68,
+                       Title = "Another Villain",
+                       Duration = 226,
+                       Link = "https://www.youtube.com/watch?v=qkvNU8P0Wqs&list=PLx6GleNkyUhgS5XXXd_jekiWHVp4Bnq1D&index=14&ab_channel=BigBadBosses-Topic",
+                       AlbumId = 6
                    }
                 );
 

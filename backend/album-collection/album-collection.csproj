@@ -6,6 +6,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Migrations\20210401024750_SixAlbums.cs" />
+    <Compile Remove="Migrations\20210401024750_SixAlbums.Designer.cs" />
+    <Compile Remove="Migrations\20210401025251_SixAlbums.cs" />
+    <Compile Remove="Migrations\20210401025251_SixAlbums.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.1.13" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Proxies" Version="3.1.13" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="3.1.13" />
