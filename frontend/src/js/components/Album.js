@@ -17,6 +17,8 @@ export default function Album(album){
             `
         }).join('')}
         </ol>
+
+
         `
        }
 

@@ -105,7 +105,9 @@ function navSongs(){
             .then(response => response.json())
             .then(data => {
                 appDiv.innerHTML = Songs(data);
-                songButton()
+                songButton();
+                fillAlbums();
+                addSong();
             })
             .catch(err => console.log(err));
 
@@ -204,5 +206,59 @@ function fillArtists(){
         })
     })
     .catch(err => console.log(err));
+}
 
+function addSong(){
+    const addSongButton = document.querySelector(".songAddButton");
+    addSongButton.addEventListener('click', function(){
+        const songTitle = document.getElementById("newSongTitle").value;
+        const songLength = parseInt(document.getElementById("newSongLength").value);
+        const songLink = document.getElementById("newSongLink").value;
+        const songAlbumId = document.getElementById("albums").value;
+        const requestBody = {
+            Title: songTitle,
+            Duration: songLength,
+            Link: songLink,
+            AlbumId: songAlbumId
+        }
+
+        fetch(`https://localhost:44313/api/song`, {
+             method: "POST",
+             headers: {
+                 "Content-Type" : "application/json"
+             },
+             body: JSON.stringify(requestBody)
+         })
+         .then(response => response.json())
+         .then(song => {
+             console.log(song);
+             appDiv.innerHTML = Song(song);
+         })
+         .catch(err => console.log(err));
+    })
+}
+
+function fillAlbums(){
+    let dropdown = document.getElementById('albums');
+    dropdown.length = 0;
+
+    let defaultOption = document.createElement('option');
+    defaultOption.text = 'Select an Album';
+    defaultOption.disabled = 'disabled';
+
+    dropdown.add(defaultOption);
+    dropdown.selectedIndex = 0;
+
+    fetch("https://localhost:44313/api/album")
+    .then(response => response.json())
+    .then(data => {
+        let option;
+        data.forEach(function(album){
+            option = document.createElement('option');
+            option.text = album.name;
+            option.value = album.id;
+            dropdown.add(option);
+        })
+    })
+    .catch(err => console.log(err));
 }
