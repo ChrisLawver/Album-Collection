@@ -33,7 +33,8 @@ namespace album_collection.Controllers
         [HttpGet("{id}")]
         public Album GetAlbum(int id)
         {
-            return _albumRepo.GetById(id);
+            var newAlbum = _albumRepo.GetById(id);
+            return newAlbum;
         }
 
         //// PUT: api/Albums/5
@@ -55,7 +56,8 @@ namespace album_collection.Controllers
         public Album PostAlbum([FromBody]Album album)
         {
             _albumRepo.Create(album);
-            return album;
+            var newAlbum = _albumRepo.GetById(album.Id);
+            return newAlbum;
         }
 
         [HttpDelete("{id}")]
