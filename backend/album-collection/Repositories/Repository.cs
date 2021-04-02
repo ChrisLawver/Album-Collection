@@ -41,5 +41,9 @@ namespace album_collection.Repositories
             db.Set<T>().Update(entity);
             Save();
         }
+        public void LoadProxy(T entity, string include)
+        {
+            db.Entry<T>(entity).Reference(include).Load();
+        }
     }
 }
