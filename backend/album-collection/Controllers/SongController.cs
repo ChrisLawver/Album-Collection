@@ -48,6 +48,7 @@ namespace album_collection.Controllers
             }
 
             _songRepo.Update(song);
+            _songRepo.LoadProxy(song, "Album");
             return song;
         }
 
@@ -55,6 +56,7 @@ namespace album_collection.Controllers
         public Song PostSong([FromBody] Song song)
         {
             _songRepo.Create(song);
+            _songRepo.LoadProxy(song, "Album");
             return song;
         }
 

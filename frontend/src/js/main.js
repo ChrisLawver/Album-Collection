@@ -64,6 +64,7 @@ function artistButton(){
             .then(data => {
                 appDiv.innerHTML = Artist(data);
                 addAlbumByArtistId();
+                updateArtistButton();
             })
             .catch(err => console.log(err));
         })
@@ -325,4 +326,33 @@ function addAlbumByArtistId(){
          })
          .catch(err => console.log(err));
     })
+}
+
+function updateArtistButton(){
+    const editArtButton = document.querySelector(".btnEditArtist");
+    console.log(editArtButton);
+    editArtButton.addEventListener('click', function(){
+        const changeArtistId = document.getElementById("changeArtistId").value;
+        const changeArtistName = document.getElementById("changeArtistName").value;
+        const changeArtistRecordLabel = document.getElementById("changeArtistRecordLabel").value;
+        const changeArtistImage = document.getElementById("changeArtistImage").value;
+        const requestBody = {
+            Id: changeArtistId,
+            Name: changeArtistName,
+            RecordLabel: changeArtistRecordLabel,
+            Image: changeArtistImage
+        }
+        fetch(`https://localhost:44313/api/artist/${changeArtistId}`, {
+            method: "PUT",
+            headers: {
+                "Content-Type" : "application/json"
+            },
+            body: JSON.stringify(requestBody)
+        })
+        .then(response => response.json())
+        .then(artist => {
+            Artist(artist);
+        })
+        .catch(err => console.log(err));
+        })
 }

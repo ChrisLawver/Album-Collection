@@ -49,6 +49,7 @@ namespace album_collection.Controllers
             }
 
             _albumRepo.Update(album);
+            _albumRepo.LoadProxy(album, "Artist");
             return album;
         }
 
@@ -56,8 +57,9 @@ namespace album_collection.Controllers
         public Album PostAlbum([FromBody]Album album)
         {
             _albumRepo.Create(album);
-            var newAlbum = _albumRepo.GetById(album.Id);
-            return newAlbum;
+            _albumRepo.LoadProxy(album, "Artist");
+
+            return album;
         }
 
         [HttpDelete("{id}")]
