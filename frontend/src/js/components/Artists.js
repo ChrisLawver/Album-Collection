@@ -7,6 +7,7 @@ export default function Artists(artists){
              return `
              <li>
              <h4 class="artist_name" id="${artist.id}">${artist.name}</h4>
+             <button class = "btnDeleteArtist" id = "${artist.id}">Delete Artist</button>
              </li>
              `
          }).join('')}

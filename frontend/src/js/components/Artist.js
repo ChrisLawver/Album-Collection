@@ -17,6 +17,7 @@ export default function Artist(artist){
             return `
                 <li>
                     ${album.name}
+                    <button class = "btnDeleteAlbum" id = "${album.id}">Delete Album</button>
                 </li>
             `
         }).join('')}

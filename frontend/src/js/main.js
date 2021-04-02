@@ -48,6 +48,7 @@ function navArtists(){
                 appDiv.innerHTML = Artists(data);
                 artistButton();
                 addArtist();
+                deleteArtistButton();
             })
             .catch(err => console.log(err));
     });
@@ -65,6 +66,7 @@ function artistButton(){
                 appDiv.innerHTML = Artist(data);
                 addAlbumByArtistId();
                 updateArtistButton();
+                deleteAlbumButton();
             })
             .catch(err => console.log(err));
         })
@@ -82,6 +84,7 @@ function navAlbums(){
                 albumButton();
                 fillArtists();
                 addAlbum();
+                deleteAlbumButton();
             })
             .catch(err => console.log(err));
 
@@ -438,6 +441,52 @@ function deleteSongButton(){
             .then(text => {
                 if(text.indexOf("Deleted") > -1){
                     const liItem = document.getElementById(deleteSongId).parentElement;
+                    liItem.remove();
+                }
+            })
+            .catch(err => console.log(err));
+            })
+        })
+}
+
+function deleteAlbumButton(){
+    const deleteAlbButton = document.querySelectorAll('.btnDeleteAlbum');
+    deleteAlbButton.forEach(element => {
+        element.addEventListener('click', function(){
+            const deleteAlbumId = element.id;
+            fetch(`https://localhost:44313/api/album/${deleteAlbumId}`, {
+                method: "DELETE",
+                headers: {
+                    "Content-Type" : "application/json"
+                }
+            })
+            .then(response => response.text())
+            .then(text => {
+                if(text.indexOf("Deleted") > -1){
+                    const liItem = document.getElementById(deleteAlbumId).parentElement;
+                    liItem.remove();
+                }
+            })
+            .catch(err => console.log(err));
+            })
+        })
+}
+
+function deleteArtistButton(){
+    const deleteArtButton = document.querySelectorAll('.btnDeleteArtist');
+    deleteArtButton.forEach(element => {
+        element.addEventListener('click', function(){
+            const deleteArtistId = element.id;
+            fetch(`https://localhost:44313/api/artist/${deleteArtistId}`, {
+                method: "DELETE",
+                headers: {
+                    "Content-Type" : "application/json"
+                }
+            })
+            .then(response => response.text())
+            .then(text => {
+                if(text.indexOf("Deleted") > -1){
+                    const liItem = document.getElementById(deleteArtistId).parentElement;
                     liItem.remove();
                 }
             })

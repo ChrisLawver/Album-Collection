@@ -7,6 +7,7 @@ export default function Albums(albums){
             return `
             <li>
             <h4 class="album_name" id="${album.id}">${album.name}</h4>
+            <button class = "btnDeleteAlbum" id = "${album.id}">Delete Album</button>
             </li>
             `
         }).join('')}
