@@ -67,6 +67,7 @@ function artistButton(){
                 addAlbumByArtistId();
                 updateArtistButton();
                 deleteAlbumButton();
+                albumButton();
             })
             .catch(err => console.log(err));
         })
@@ -103,6 +104,8 @@ function albumButton(){
                 addSongByAlbumId();
                 updateAlbumButton();
                 deleteSongButton();
+                artistButton();
+                songButton();
                 })
             .catch(err => console.log(err));
         })
@@ -137,6 +140,7 @@ function songButton(){
             .then(data => {
                 appDiv.innerHTML = Song(data);
                 updateSongButton();
+                albumButton();
             })
             .catch(err => console.log(err));
         })
@@ -166,6 +170,10 @@ function addArtist(){
          .then(artist => {
              console.log(artist);
              appDiv.innerHTML = Artist(artist);
+             addAlbumByArtistId();
+                updateArtistButton();
+                deleteAlbumButton();
+                albumButton();
          })
          .catch(err => console.log(err));
     })
@@ -194,6 +202,12 @@ function addAlbum(){
          .then(album => {
              console.log(album);
              appDiv.innerHTML = Album(album);
+             addSongByAlbumId();
+                updateAlbumButton();
+                deleteSongButton();
+                artistButton();
+                songButton();
+             
          })
          .catch(err => console.log(err));
     })
@@ -249,6 +263,8 @@ function addSong(){
          .then(song => {
              console.log(song);
              appDiv.innerHTML = Song(song);
+            updateSongButton();
+            albumButton();
          })
          .catch(err => console.log(err));
     })
@@ -304,6 +320,8 @@ function addSongByAlbumId(){
          .then(song => {
              console.log(song);
              appDiv.innerHTML = Song(song);
+             updateSongButton();
+            albumButton();
          })
          .catch(err => console.log(err));
     })
@@ -332,6 +350,11 @@ function addAlbumByArtistId(){
          .then(album => {
              console.log(album);
              appDiv.innerHTML = Album(album);
+             addSongByAlbumId();
+                updateAlbumButton();
+                deleteSongButton();
+                artistButton();
+                songButton();
          })
          .catch(err => console.log(err));
     })

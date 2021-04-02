@@ -7,8 +7,8 @@ export default function Song(song){
         <input type = "hidden" id = "changeSongAlbumId" value = "${song.albumId}"/>
         <button class = "btnEditSong">Update Song</button>
         <br>
-        <h2>${song.album.name}</h2>
-        <a href=${song.link}>Play Song</a>
+        <h2 class = "album_name" id = "${song.album.id}">${song.album.name}</h2>
+        <a href=${song.link} target="_blank">Play Song</a>
         `
        }
 

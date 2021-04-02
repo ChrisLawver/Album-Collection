@@ -16,7 +16,7 @@ export default function Artist(artist){
         ${artist.albums.map(album =>{
             return `
                 <li>
-                    ${album.name}
+                    <h3 class = "album_name" id = "${album.id}">${album.name}</h3>
                     <button class = "btnDeleteAlbum" id = "${album.id}">Delete Album</button>
                 </li>
             `
