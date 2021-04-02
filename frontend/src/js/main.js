@@ -99,6 +99,7 @@ function albumButton(){
                  appDiv.innerHTML = Album(data);
                 addSongByAlbumId();
                 updateAlbumButton();
+                deleteSongButton();
                 })
             .catch(err => console.log(err));
         })
@@ -116,6 +117,7 @@ function navSongs(){
                 songButton();
                 fillAlbums();
                 addSong();
+                deleteSongButton();
             })
             .catch(err => console.log(err));
 
@@ -434,8 +436,8 @@ function deleteSongButton(){
             })
             .then(response => response.text())
             .then(text => {
-                if(text.indexOf("Song Deleted.")>-1){
-                    const liItem = document.getElementById('deleteSongId').parentElement;
+                if(text.indexOf("Deleted") > -1){
+                    const liItem = document.getElementById(deleteSongId).parentElement;
                     liItem.remove();
                 }
             })
