@@ -11,13 +11,13 @@ export default function Album(album){
     <input type = "hidden" id = "changeAlbumImage" value = "${album.image}"/>
     <button class = "btnEditAlbum">Update Album</button>
     <br>
-    <h2>${album.artist.name}</h2>
+    <h2 class = "artist_name" id = "${album.artist.id}">${album.artist.name}</h2>
     <img src=${album.image} alt=${album.name}>
         <ol>
         ${album.songs.map(song =>{
             return `
                 <li>
-                    ${song.title}
+                    <h2 class = "song_title" id = "${song.id}">${song.title}</h2>
                     <button class = "btnDeleteSong" id = "${song.id}">Delete Song</button>
                 </li>
             `
