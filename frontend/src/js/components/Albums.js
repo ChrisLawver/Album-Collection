@@ -20,7 +20,7 @@ export default function Albums(albums){
             <label>Album Art: </label>
             <input type = "text" id = "newAlbumImage" placeholder = "Image URL"/>
             <br>
-            <select id = "artists" required>
+            <select id = "artists">
             </select>
             <br>
             <button class = "albumAddButton">Add Album</button>

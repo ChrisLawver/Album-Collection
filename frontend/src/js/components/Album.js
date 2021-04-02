@@ -7,6 +7,7 @@ export default function Album(album){
     return `
     <h1><input type = "text" id = "changeAlbumName" value = "${album.name}"/></h1>
     <input type = "hidden" id = "changeAlbumId" value = "${album.id}"/>
+    <input type = "hidden" id = "changeAlbumArtistId" value = "${album.artistId}"/>
     <input type = "hidden" id = "changeAlbumImage" value = "${album.image}"/>
     <button class = "btnEditAlbum">Update Album</button>
     <br>

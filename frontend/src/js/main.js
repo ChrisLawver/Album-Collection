@@ -129,7 +129,10 @@ function songButton(){
             const songId = element.id;
             fetch(`https://localhost:44313/api/song/${songId}`)
             .then(response => response.json())
-            .then(data => appDiv.innerHTML = Song(data))
+            .then(data => {
+                appDiv.innerHTML = Song(data);
+                updateSongButton();
+            })
             .catch(err => console.log(err));
         })
     })
@@ -365,10 +368,12 @@ function updateAlbumButton(){
         const changeAlbumId = document.getElementById("changeAlbumId").value;
         const changeAlbumName = document.getElementById("changeAlbumName").value;
         const changeAlbumImage = document.getElementById("changeAlbumImage").value;
+        const changeAlbumArtistId = document.getElementById("changeAlbumArtistId").value;
         const requestBody = {
             Id: changeAlbumId,
             Name: changeAlbumName,
-            Image: changeAlbumImage
+            Image: changeAlbumImage,
+            ArtistId: changeAlbumArtistId
         }
         fetch(`https://localhost:44313/api/album/${changeAlbumId}`, {
             method: "PUT",
@@ -380,6 +385,37 @@ function updateAlbumButton(){
         .then(response => response.json())
         .then(album => {
             Album(album);
+        })
+        .catch(err => console.log(err));
+        })
+}
+
+function updateSongButton(){
+    const editSngButton = document.querySelector(".btnEditSong");
+    console.log(editSngButton);
+    editSngButton.addEventListener('click', function(){
+        const changeSongId = document.getElementById("changeSongId").value;
+        const changeSongTitle = document.getElementById("changeSongTitle").value;
+        const changeSongDuration = parseInt(document.getElementById("changeSongDuration").value);
+        const changeSongLink = document.getElementById("changeSongLink").value;
+        const changeSongAlbumId = document.getElementById("changeSongAlbumId").value;
+        const requestBody = {
+            Id: changeSongId,
+            Title: changeSongTitle,
+            Duration: changeSongDuration,
+            Link: changeSongLink,
+            AlbumId: changeSongAlbumId
+        }
+        fetch(`https://localhost:44313/api/song/${changeSongId}`, {
+            method: "PUT",
+            headers: {
+                "Content-Type" : "application/json"
+            },
+            body: JSON.stringify(requestBody)
+        })
+        .then(response => response.json())
+        .then(song => {
+            Song(song);
         })
         .catch(err => console.log(err));
         })
