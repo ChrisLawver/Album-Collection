@@ -7,6 +7,7 @@ export default function Songs(songs){
             return `
             <li>
             <h4 class="song_title" id="${song.id}">${song.title}</h4>
+            <button class = "btnDeleteSong"></button>
             </li>
             `
         }).join('')}

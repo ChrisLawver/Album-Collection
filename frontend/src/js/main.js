@@ -420,3 +420,26 @@ function updateSongButton(){
         .catch(err => console.log(err));
         })
 }
+
+function deleteSongButton(){
+    const deleteSngButton = document.querySelectorAll('.btnDeleteSong');
+    deleteSngButton.forEach(element => {
+        element.addEventListener('click', function(){
+            const deleteSongId = element.id;
+            fetch(`https://localhost:44313/api/song/${deleteSongId}`, {
+                method: "DELETE",
+                headers: {
+                    "Content-Type" : "application/json"
+                }
+            })
+            .then(response => response.text())
+            .then(text => {
+                if(text.indexOf("Song Deleted.")>-1){
+                    const liItem = document.getElementById('deleteSongId').parentElement;
+                    liItem.remove();
+                }
+            })
+            .catch(err => console.log(err));
+            })
+        })
+}
