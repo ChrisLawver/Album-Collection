@@ -98,6 +98,7 @@ function albumButton(){
             .then(data => {
                  appDiv.innerHTML = Album(data);
                 addSongByAlbumId();
+                updateAlbumButton();
                 })
             .catch(err => console.log(err));
         })
@@ -352,6 +353,33 @@ function updateArtistButton(){
         .then(response => response.json())
         .then(artist => {
             Artist(artist);
+        })
+        .catch(err => console.log(err));
+        })
+}
+
+function updateAlbumButton(){
+    const editAlbButton = document.querySelector(".btnEditAlbum");
+    console.log(editAlbButton);
+    editAlbButton.addEventListener('click', function(){
+        const changeAlbumId = document.getElementById("changeAlbumId").value;
+        const changeAlbumName = document.getElementById("changeAlbumName").value;
+        const changeAlbumImage = document.getElementById("changeAlbumImage").value;
+        const requestBody = {
+            Id: changeAlbumId,
+            Name: changeAlbumName,
+            Image: changeAlbumImage
+        }
+        fetch(`https://localhost:44313/api/album/${changeAlbumId}`, {
+            method: "PUT",
+            headers: {
+                "Content-Type" : "application/json"
+            },
+            body: JSON.stringify(requestBody)
+        })
+        .then(response => response.json())
+        .then(album => {
+            Album(album);
         })
         .catch(err => console.log(err));
         })
