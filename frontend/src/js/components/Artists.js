@@ -15,6 +15,23 @@ export default function Artists(artists){
          </ol>
 
          <section class = "addArtist">
+         <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
             <label>Artist Name: </label>
             <input type = "text" id = "newArtistName" placeholder = "Artist Name"/>
             <br>
@@ -24,7 +41,10 @@ export default function Artists(artists){
             <label>Artist's Picture: </label>
             <input type = "text" id = "newArtistImage" placeholder = "Image URL"/>
             <br>
+            <br>
             <button class = "artistAddButton">Add Artist</button>
+            <br>
+            <br>
          </section>
 
 

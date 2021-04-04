@@ -15,6 +15,14 @@ export default function Songs(songs){
         </ol>
 
         <section class = "addSong">
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
             <label>Song Title: </label>
             <input type = "text" id = "newSongTitle" placeholder = "Song Title"/>
             <br>
@@ -24,10 +32,14 @@ export default function Songs(songs){
             <label>Link to Song: </label>
             <input type = "text" id = "newSongLink" placeholder = "Youtube URL"/>
             <br>
+            <br>
             <select id = "albums">
             </select>
             <br>
             <button class = "songAddButton">Add Song</button>
+            <br>
+            <br>
+            <br>
         </section>
         `
        }
