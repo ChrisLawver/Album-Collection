@@ -5,11 +5,11 @@ export default function Artist(artist){
     }
 
     return `
-        <h1>${artist.name}</h1>
-        <h2>${artist.recordLabel}</h2>
+        <h1><input type = "text" id = "changeArtistName" value = "${artist.name}"/></h1>
+        <h2><input type = "text" id = "changeArtistRecordLabel" value = "${artist.recordLabel}"/></h2>
         <input type = "hidden" id = "changeArtistId" value = "${artist.id}"/>
         <input type = "hidden" id = "changeArtistImage" value = "${artist.image}"/>
-        <img src=${artist.image} alt=${artist.name}>
+        <img src=${artist.image} alt=${artist.name} width = "500px">
         <br>
         <br>
         <button class = "btnEditArtist">Update Artist</button>

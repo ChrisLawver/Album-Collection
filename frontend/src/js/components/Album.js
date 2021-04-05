@@ -5,12 +5,13 @@ export default function Album(album){
     }
     
     return `
-    <h1>${album.name}</h1>
+    <h1><input type = "text" id = "changeAlbumName" value = "${album.name}"/></h1>
     <input type = "hidden" id = "changeAlbumId" value = "${album.id}"/>
     <input type = "hidden" id = "changeAlbumArtistId" value = "${album.artistId}"/>
     <input type = "hidden" id = "changeAlbumImage" value = "${album.image}"/>
-    <h2 class = "ArtistName" class = "artist_name" id = "${album.artist.id}">${album.artist.name}</h2>
-    <img src=${album.image} alt=${album.name}>
+    <input type = "hidden" id = "changeAlbumImage" value = "${album.image}"/>
+    <h2 class = "artist_name" id = "${album.artist.id}">${album.artist.name}</h2>
+    <img src=${album.image} alt=${album.name} width = "500px">
     <br>
     <button class = "btnEditAlbum">Update Album</button>
         <ol>
