@@ -9,21 +9,29 @@ export default function Album(album){
     <input type = "hidden" id = "changeAlbumId" value = "${album.id}"/>
     <input type = "hidden" id = "changeAlbumArtistId" value = "${album.artistId}"/>
     <input type = "hidden" id = "changeAlbumImage" value = "${album.image}"/>
-    <button class = "btnEditAlbum">Update Album</button>
-    <br>
+    <input type = "hidden" id = "changeAlbumImage" value = "${album.image}"/>
     <h2 class = "artist_name" id = "${album.artist.id}">${album.artist.name}</h2>
-    <img src=${album.image} alt=${album.name}>
+    <img src=${album.image} alt=${album.name} width = "500px">
+    <br>
+    <button class = "btnEditAlbum">Update Album</button>
         <ol>
         ${album.songs.map(song =>{
             return `
                 <li>
                     <h2 class = "song_title" id = "${song.id}">${song.title}</h2>
                     <button class = "btnDeleteSong" id = "${song.id}">Delete Song</button>
-                </li>
+                    </li>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
             `
         }).join('')}
         </ol>
-
         <section class = "addSong">
             <label>Song Title: </label>
             <input type = "text" id = "newSongTitle" placeholder = "Song Title"/>

@@ -15,17 +15,30 @@ export default function Albums(albums){
         </ol>
 
         <section class = "addAlbum">
+        <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
             <label>Album Name: </label>
             <input type = "text" id = "newAlbumName" placeholder = "Album Name"/>
             <br>
             <label>Album Art: </label>
             <input type = "text" id = "newAlbumImage" placeholder = "Image URL"/>
             <br>
+            <br>
             <select id = "artists">
             </select>
             <br>
             <button class = "albumAddButton">Add Album</button>
-        </section>
+            <br>
+            <br>
+            <br>
+            <br>
+            </section>
 
         `
        }
